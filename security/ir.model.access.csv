@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_wedding_partner,access.wedding.partner,model_wedding_partner,,1,1,1,1
 access_wedding_panggung,access.wedding.panggung,model_wedding_panggung,,1,1,1,1
 access_wedding_pelaminan,access.wedding.pelaminan,model_wedding_pelaminan,,1,1,1,1
+access_wedding_aksesoris,access.wedding.aksesoris,model_wedding_aksesoris,,1,1,1,1
+access_wedding_kursi,access.wedding.kursi,model_wedding_kursi,,1,1,1,1

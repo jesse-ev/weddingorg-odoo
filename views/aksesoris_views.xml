@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- wedding.aksesoris tree view -->
+    <record id="wedding_aksesoris_view_tree" model="ir.ui.view">
+        <field name="name">Aksesoris</field>
+        <field name="model">wedding.aksesoris</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="harga"/>
+                <field name="sponsor"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- wedding.aksesoris action window -->
+    <record id="wedding_aksesoris_action" model="ir.actions.act_window">
+        <field name="name">Aksesoris</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wedding.aksesoris</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="wedding_aksesoris_menu_act" 
+        name="Aksesoris" 
+        parent="wedding_akomodasi_menu_categ" 
+        action="wedding_aksesoris_action" 
+        sequence="30"/>
+    
+</odoo>

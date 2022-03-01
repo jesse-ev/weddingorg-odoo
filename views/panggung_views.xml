@@ -11,10 +11,48 @@
                 <field name="pelaminan"/>
                 <field name="bunga"/>
                 <field name="accesories"/>
+                <field name="jumlah_accesories"/>
+                <field name="kursi"/>
+                <field name="jumlah_kursi"/>
                 <field name="harga"/>
             </tree>
         </field>
     </record>
+
+    <!-- wedding.panggung form view -->
+    <record id="wedding_panggung_view_form" model="ir.ui.view">
+        <field name="name">wedding.panggung.view.form</field>
+        <field name="model">wedding.panggung</field>
+        <field name="arch" type="xml">
+            <form string="Buat panggung baru">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="pelaminan"/>
+                        <field name="bunga"/>
+                    </group>
+                    <group>
+                        <field name="accesories"/>
+                        <field 
+                            name="jumlah_accesories"
+                            attrs="{'invisible': [('accesories', '=', False)]}" 
+                        />
+                    </group>
+                    <group>
+                        <field name="kursi"/>
+                        <field 
+                            name="jumlah_kursi"
+                            attrs="{'invisible': [('kursi', '=', False)]}" 
+                        />
+                    </group>
+                    <group>
+                        <field name="harga"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
     <!-- wedding.panggung action window -->
     <record id="wedding_panggung_action" model="ir.actions.act_window">

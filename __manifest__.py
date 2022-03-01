@@ -30,6 +30,8 @@
         'views/menu.xml',
         'views/panggung_views.xml',
         'views/pelaminan_views.xml',
+        'views/aksesoris_views.xml',
+        'views/kursi_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

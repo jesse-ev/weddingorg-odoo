@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- wedding.kursi tree view -->
+    <record id="wedding_kursi_view_tree" model="ir.ui.view">
+        <field name="name">Jenis kursi</field>
+        <field name="model">wedding.kursi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="harga"/>
+                <field name="sponsor"/>
+                <field name="deskripsi"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- wedding.kursi action window -->
+    <record id="wedding_kursi_action" model="ir.actions.act_window">
+        <field name="name">wedding.kursi.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wedding.kursi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="wedding_kursi_menu_act" 
+        name="Kursi" 
+        parent="wedding_akomodasi_menu_categ" 
+        action="wedding_kursi_action" 
+        sequence="40"/>
+
+</odoo>
