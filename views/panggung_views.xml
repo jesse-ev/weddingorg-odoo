@@ -14,6 +14,8 @@
                 <field name="jumlah_accesories"/>
                 <field name="kursi"/>
                 <field name="jumlah_kursi"/>
+                <field name="makan_minum_id"/>
+                <field name="pax"/>
                 <field name="harga"/>
             </tree>
         </field>
@@ -44,6 +46,10 @@
                             name="jumlah_kursi"
                             attrs="{'invisible': [('kursi', '=', False)]}" 
                         />
+                    </group>
+                    <group>
+                        <field name="makan_minum_id"/>
+                        <field name="pax"/>
                     </group>
                     <group>
                         <field name="harga"/>

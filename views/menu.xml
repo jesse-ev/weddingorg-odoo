@@ -13,5 +13,10 @@
         name="Akomodasi" 
         parent="wedding_menu_root" 
         sequence="10"/>
+    
+    <menuitem
+        id="my_menu"
+        name="Halo Bang"
+        sequence="10"/>
 
 </odoo>

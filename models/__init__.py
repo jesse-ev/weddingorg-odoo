@@ -6,3 +6,4 @@ from . import panggung
 from . import pelaminan
 from . import aksesoris
 from . import kursi
+from . import makan_minum

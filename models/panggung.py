@@ -1,5 +1,7 @@
 from odoo import api, fields, models
+import logging
 
+log = logging.getLogger(__name__)
 
 class Panggung(models.Model):
     _name = 'wedding.panggung'
@@ -25,18 +27,27 @@ class Panggung(models.Model):
     jumlah_kursi = fields.Integer(
         string='Jumlah Kursi',
     )
+    makan_minum_id = fields.Many2many(comodel_name='wedding.makan_minum', string='Makanan dan Minuman')
+    pax = fields.Integer(string='Jumlah Pax')
+    
     
 
     harga = fields.Char(compute='_compute_harga', string='Harga')
     
-    @api.depends('pelaminan', 'jumlah_accesories', 'jumlah_kursi', 'bunga')
+    @api.depends('pelaminan', 'jumlah_accesories', 'jumlah_kursi', 'bunga', 'makan_minum_id', 'pax')
     def _compute_harga(self):
+        log.debug(self)
         _harga = 0
         for record in self:
             if record.jumlah_accesories < 0:
                 record.jumlah_accesories = 0
             if record.jumlah_kursi < 0:
                 record.jumlah_kursi = 0
+            if record.pax < 0:
+                record.pax = 0
+            if record.makan_minum_id:
+                for makan_minum in record.makan_minum_id:
+                    _harga += makan_minum.harga * record.pax
             if record.accesories.sponsor:
                 _harga = _harga + (record.accesories.harga + 50000) * record.jumlah_accesories
             else:

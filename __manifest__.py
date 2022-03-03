@@ -32,6 +32,7 @@
         'views/pelaminan_views.xml',
         'views/aksesoris_views.xml',
         'views/kursi_views.xml',
+        'views/makanminum_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
